@@ -25,7 +25,7 @@ Each label is rendered with 4 fields:
 
 This example configuration:
 
-```
+```json
 {
   "base-url": "https://docs.example.com/items/",
   "items": [
