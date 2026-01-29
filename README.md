@@ -29,14 +29,14 @@ This example configuration:
 {
   "base-url": "https://docs.example.com/items/",
   "items": [
-    { "id": "item-001", "name": "Small Compute Node", "zone": "ZONE-A", "locator": "LOC-01" },
-    { "id": "item-002", "name": "Network Switch", "zone": "ZONE-B", "locator": "LOC-02" },
-    { "id": "item-003", "name": "Storage Unit", "zone": "ZONE-A", "locator": "LOC-03" },
-    { "id": "item-004", "name": "Power Distribution", "zone": "ZONE-C", "locator": "LOC-04" },
-    { "id": "item-005", "name": "Wireless Access Point", "zone": "ZONE-B", "locator": "LOC-05" },
-    { "id": "item-006", "name": "Backup Device", "zone": "ZONE-D", "locator": "LOC-06" },
-    { "id": "item-007", "name": "Peripheral Hub", "zone": "ZONE-A", "locator": "LOC-07" },
-    { "id": "item-008", "name": "Monitoring Unit", "zone": "ZONE-C", "locator": "LOC-08" }
+    { "id": "NYC_srv_edge_01", "name": "Edge Compute Node", "zone": "DATACENTER-A", "locator": "RACK-01-U3" },
+    { "id": "AMS_switch_core_01", "name": "Core Network Switch", "zone": "NETWORK", "locator": "RACK-02-U1" },
+    { "id": "ZRH_nas_01", "name": "Primary Storage Unit", "zone": "DATACENTER-B", "locator": "RACK-03-U6" },
+    { "id": "LON_pdu_01", "name": "Power Distribution Unit", "zone": "POWER", "locator": "RACK-01-BACK" },
+    { "id": "BER_ap_02", "name": "Wireless Access Point", "zone": "OFFICE", "locator": "CEILING-Z2" },
+    { "id": "PAR_printer_01", "name": "Document Printer", "zone": "ADMIN", "locator": "ROOM-204" },
+    { "id": "MAD_cart_01", "name": "Mobile Equipment Cart", "zone": "STORAGE", "locator": "AISLE-C" },
+    { "id": "ROM_toolkit_01", "name": "General Tool Kit", "zone": "WORKSHOP", "locator": "DRAWER-5" }
   ]
 }
 ```
