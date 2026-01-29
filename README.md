@@ -2,7 +2,7 @@
 
 ## Technical Details
 Coded in:
-- Typst
+- Typst (using [cades](https://typst.app/universe/package/cades/) package)
 - JSON
 
 ## Project Goals
