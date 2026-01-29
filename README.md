@@ -1,4 +1,4 @@
-# label-works
+<img width="1280" height="640" alt="label-works" src="https://github.com/user-attachments/assets/6b127015-0855-4b5a-b9fe-2062f7b92970" />
 A label maker / organisational system coded in typst and json.
 
 ## Project Goals
