@@ -58,3 +58,7 @@ Would render:
 
 <img width="3508" height="2480" alt="labels" src="https://github.com/user-attachments/assets/ffef2c5e-647c-4e67-950c-5460b78eae2c" />
 
+## To-Do
+- [ ] Implement QR code URL override
+- [ ] Code simple item management script
+
