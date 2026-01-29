@@ -15,10 +15,10 @@ Coded in:
 Each label is rendered with 4 fields:
 | Field | What is it? | Example |
 |----------------|----------------------|--------|
-| ID | Item ID              | `GVA_switch_core_1` |
-| name | Description          | 10g PoE Core Switch |
-| zone | Zone                 | Core Network |
-| locator | Locator              | `10.0.0.1` |
+| ID | Item ID              | `NYC_srv_edge_01` |
+| name | Description          | Edge Compute Node |
+| zone | Zone                 | DATACENTER-A |
+| locator | Locator              | `RACK-01-U3` |
 
 ## How do I use it?
 1. Configure the `items.json` file to specify your items and your documentation base URL.
