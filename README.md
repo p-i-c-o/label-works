@@ -42,6 +42,5 @@ This example configuration:
 ```
 
 Would render:
-<img width="842" height="595" alt="labels" src="https://github.com/user-attachments/assets/3fe0d687-bc16-441c-87d5-42032bf9faf0" />
-
+<img width="3508" height="2480" alt="labels" src="https://github.com/user-attachments/assets/ffef2c5e-647c-4e67-950c-5460b78eae2c" />
 
