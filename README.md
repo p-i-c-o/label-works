@@ -5,6 +5,10 @@ Coded in:
 - Typst (using [cades](https://typst.app/universe/package/cades/) package)
 - JSON
 
+## Dependencies
+- Typst
+- `Spleen 32x64` Font (found in [fcambus/spleen](https://github.com/fcambus/spleen/releases))
+
 ## Project Goals
 - Track techincal details
 - Track changes
@@ -16,8 +20,8 @@ Each label is rendered with 4 fields:
 | Field | What is it? | Example |
 |----------------|----------------------|--------|
 | ID | Item ID              | `NYC_srv_edge_01` |
-| name | Description          | Edge Compute Node |
-| zone | Zone                 | DATACENTER-A |
+| name | Description          | `Edge Compute Node` |
+| zone | Zone                 | `DATACENTER-A` |
 | locator | Locator              | `RACK-01-U3` |
 
 A QR-Code is rendered which combines the base-url and the ID. I designed this around the idea that each item will have it's own static hosted documentation that can keep track of its:
