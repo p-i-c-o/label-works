@@ -44,7 +44,6 @@
     align: (left + top, center + horizon),
     [#name #v(-4pt) #text(fill: rgb("#949494"))[Zone:] #upper(zone) #v(-4pt) #locator],
     [#qr-code(base-url + ID, width: qr-size)]
-    //[#image("square.png", width: qr-size)]
   )
 ]
 
