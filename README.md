@@ -1,4 +1,4 @@
-<img width="1280" height="640" alt="label-works" src="https://github.com/user-attachments/assets/6b127015-0855-4b5a-b9fe-2062f7b92970" />
+<img width="1280" height="640" alt="label-works" src="label-works.png" />
 
 ## Technical Details
 Coded in:
@@ -56,7 +56,7 @@ This example configuration:
 
 Would render:
 
-<img width="3508" height="2480" alt="labels" src="https://github.com/user-attachments/assets/ffef2c5e-647c-4e67-950c-5460b78eae2c" />
+<img width="3508" height="2480" alt="labels" src="labels.png" />
 
 ## To-Do
 - [ ] Implement QR code URL override
