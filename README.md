@@ -24,6 +24,7 @@ Each label is rendered with 4 fields:
 1. Configure the `items.json` file to specify your items and your documentation base URL.
 2. Render your labels using `typst compile labels.typ`
 3. Print the `labels.pdf` file on to sticker A4 paper.
+4. Cut on dashed-lines and apply!
 
 ## How do I configure it?
 
