@@ -46,14 +46,32 @@ This example configuration (note the optional per-item `url` override used for t
 {
   "base-url": "https://docs.example.com/items/%zone%/%id%",
   "items": [
-    { "id": "NYC_srv_edge_01", "name": "Edge Compute Node", "zone": "DATACENTER-A", "locator": "RACK-01-U3" },
-    { "id": "AMS_switch_core_01", "name": "Core Network Switch", "zone": "NETWORK", "locator": "RACK-02-U1" },
-    { "id": "ZRH_nas_01", "name": "Primary Storage Unit", "zone": "DATACENTER-B", "locator": "RACK-03-U6" },
-    { "id": "LON_pdu_01", "name": "Power Distribution Unit", "zone": "POWER", "locator": "RACK-01-BACK" },
-    { "id": "BER_ap_02", "name": "Wireless Access Point", "zone": "OFFICE", "locator": "CEILING-Z2" },
-    { "id": "PAR_printer_01", "name": "Document Printer", "zone": "ADMIN", "locator": "ROOM-204", "url": "https://docs.example.com/printers/%locator%/%name%" },
-    { "id": "MAD_cart_01", "name": "Mobile Equipment Cart", "zone": "STORAGE", "locator": "AISLE-C" },
-    { "id": "ROM_toolkit_01", "name": "General Tool Kit", "zone": "WORKSHOP", "locator": "DRAWER-5" }
+    {
+      "id": "NYC_srv_edge_01",
+      "name": "Edge Compute Node",
+      "zone": "DATACENTER-A",
+      "locator": "RACK-01-U3"
+    },
+    {
+      "id": "AMS_switch_core_01",
+      "name": "Core Network Switch",
+      "zone": "NETWORK",
+      "locator": "RACK-02-U1"
+    },
+    {
+      "id": "BER_ap_02",
+      "name": "Wireless Access Point",
+      "zone": "OFFICE",
+      "locator": "CEILING-Z2",
+      "url": "https://docs.example.com/wifi/%locator%/%name%"
+    },
+    {
+      "id": "PAR_printer_01",
+      "name": "Document Printer",
+      "zone": "ADMIN",
+      "locator": "ROOM-204",
+      "url": "https://docs.example.com/printers/%locator%/%name%"
+    }
   ]
 }
 ```
