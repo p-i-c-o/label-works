@@ -16,20 +16,10 @@ Coded in:
 - Give each item with a label an individual identifier
 
 ## How does it work?
-Each label is rendered with 4 fields:
-| Field | What is it? | Example |
-|----------------|----------------------|--------|
-| ID | Item ID              | `NYC_srv_edge_01` |
-| name | Description          | `Edge Compute Node` |
-| zone | Zone                 | `DATACENTER-A` |
-| locator | Locator              | `RACK-01-U3` |
-
-A QR-Code is rendered which combines the base-url and the ID. I designed this around the idea that each item will have it's own static hosted documentation that can keep track of its:
-- Repairs
-- Replacements
-- Configurations
-- Incident reports
-- FAQs
+Each label is rendered with 4 fields and a QR-Code. QR codes could lead to:
+- Repairs & Replacement Logs
+- Internal Documentation
+- Dashboards
 - etc...
 
 ## How do you use it?
@@ -41,6 +31,20 @@ A QR-Code is rendered which combines the base-url and the ID. I designed this ar
 ## How do you configure it?
 
 This example configuration (note the optional per-item `url` override used for the printer). The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or `%zone%` placeholders which will be substituted in the QR code URL. If the `base-url` contains no placeholders, `%id%` will be appended automatically for backward compatibility.
+
+### URL placeholders
+Both `base-url` and item-level `url` support URL placeholders. Item-level `url` takes precedence over `base-url` for that specific label.
+
+## Fields
+| Field | What is it? | Example | URL Placeholder |
+|----------------|----------------------|--------|--------|
+| ID | Item ID              | `NYC_srv_edge_01` | `%id%` |
+| name | Description          | `Edge Compute Node` | `%name%` |
+| zone | Zone                 | `DATACENTER-A` | `%zone%` |
+| locator | Locator              | `RACK-01-U3` | `%locator%` |
+
+
+
 
 ```json
 {
@@ -76,19 +80,12 @@ This example configuration (note the optional per-item `url` override used for t
 }
 ```
 
-### URL placeholders
-Both `base-url` and item-level `url` support the following placeholders:
-- `%id%` → the item ID
-- `%locator%` → the locator value
-- `%name%` → the label name/description
-- `%zone%` → the zone value
 
-Item-level `url` takes precedence over `base-url` for that label.
 
 Would render:
 
 <img width="3508" height="2480" alt="labels" src="labels.png" />
 
 ## To-Do
-- [ ] Implement QR code URL override
+- [X] Implement QR code URL override
 - [ ] Code simple item management script
