@@ -30,22 +30,20 @@ Each label is rendered with 4 fields and a QR-Code. QR codes could lead to:
 
 ## How do you configure it?
 
-This example configuration (note the optional per-item `url` override used for the printer). The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or `%zone%` placeholders which will be substituted in the QR code URL. If the `base-url` contains no placeholders, `%id%` will be appended automatically for backward compatibility.
+Create and edit a `labels.json` file to include a list containing a `"base-url`" text-field and an `"items"` list with each label, each label item has:
 
-### URL placeholders
-Both `base-url` and item-level `url` support URL placeholders. Item-level `url` takes precedence over `base-url` for that specific label.
+| Field | What is it? | Example | URL Placeholder | Required |
+|----------------|----------------------|--------|--------|--------|
+| `id` | Item ID | `NYC_srv_edge_01` | `%id%` | Yes |
+| `name` | Description | `Edge Compute Node` | `%name%` | Yes |
+| `zone` | Zone | `DATACENTER-A` | `%zone%` | Yes |
+| `locator` | Locator | `RACK-01-U3` | `%locator%` | Yes |
+| `url` | Override URL | `http://10.0.20.134:8005` |  | No |
 
-## Fields
-| Field | What is it? | Example | URL Placeholder |
-|----------------|----------------------|--------|--------|
-| ID | Item ID              | `NYC_srv_edge_01` | `%id%` |
-| name | Description          | `Edge Compute Node` | `%name%` |
-| zone | Zone                 | `DATACENTER-A` | `%zone%` |
-| locator | Locator              | `RACK-01-U3` | `%locator%` |
-
+The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or `%zone%` placeholders which will be substituted in the QR code URL. If the `base-url` contains no placeholders, `%id%` will be appended automatically for backward compatibility. Both `base-url` and item-level `url` support URL placeholders. Item-level `url` takes precedence over `base-url` for that specific label.
 
 
-
+## Example JSON Configuration
 ```json
 {
   "base-url": "https://docs.example.com/items/%zone%/%id%",
