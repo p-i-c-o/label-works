@@ -23,10 +23,11 @@ Each label is rendered with 4 fields and a QR-Code. QR codes could lead to:
 - etc...
 
 ## How do you use it?
-1. Configure the `labels.json` file to specify your items and your documentation base URL.
-2. Render your labels using `typst compile labels.typ`
-3. Print the `labels.pdf` file on to sticker A4 paper.
-4. Cut on dashed-lines and apply!
+1. Install the `Spleen 32x64` font to your system using the file provided.
+2. Configure the `labels.json` file to specify your items and your documentation base URL.
+3. Render your labels using `typst compile labels.typ`
+4. Print the `labels.pdf` file on to sticker A4 paper.
+5. Cut on dashed-lines and apply!
 
 ## How do you configure it?
 
