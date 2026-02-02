@@ -90,4 +90,5 @@ Would render:
 
 ## To-Do
 - [X] Implement QR code URL override
+- [X] Implement QR code disable
 - [ ] Code simple item management script
