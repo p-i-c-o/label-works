@@ -26,7 +26,7 @@
   body
 }
 
-#let label(ID, name, zone, locator, qr-url) = block(
+#let label(ID, name, zone, locator, qr-url, show-qr) = block(
   stroke: 0.8pt,
   inset: 6pt,
   width: 100%,
@@ -36,19 +36,37 @@
   #v(-15pt)
   #line(length: 100%, stroke: 0.8pt)
   #v(-8pt)
-  #grid(
-    columns: (1.7fr, 1fr),
-    column-gutter: 6pt,
-    row-gutter: -4pt,
-    stroke: 0pt,
-    align: (left + top, center + horizon),
-    [#name #v(-4pt) #text(fill: rgb("#949494"))[Zone:] #upper(zone) #v(-4pt) #locator],
-    [#qr-code(qr-url, width: qr-size)]
-  )
+  #if show-qr {
+    grid(
+      columns: (1.7fr, 1fr),
+      column-gutter: 6pt,
+      row-gutter: -4pt,
+      stroke: 0pt,
+      align: (left + top, center + horizon),
+      [#name #v(-4pt) #text(fill: rgb("#949494"))[Zone:] #upper(zone) #v(-4pt) #locator],
+      [
+        // Swap this with qr-code(...) when you want QR back:
+        #qr-code(qr-url, width: qr-size)
+        //#image("square.png", width: qr-size)
+      ]
+    )
+  } else {
+    grid(
+      columns: (1fr, 0pt),
+      column-gutter: 0pt,
+      row-gutter: -4pt,
+      stroke: 0pt,
+      align: (left + top, center + horizon),
+      [#name #v(-4pt) #text(fill: rgb("#949494"))[Zone:] #upper(zone) #v(-4pt) #locator],
+      // Keep the same height as the QR version without reserving width.
+      [#block(width: 0pt, height: qr-size)[]]
+    )
+  }
 ]
 
 // Load data and render dynamically
 #let items = data.items
+#let qr-enabled(item) = if item.keys().contains("qr") { item.qr } else { true }
 #let has-vars(url) = {
   url.contains("%id%") or url.contains("%locator%") or url.contains("%name%") or url.contains("%zone%")
 }
@@ -69,7 +87,8 @@
       let base_template = if has-vars(base-url) { base-url } else { base-url + "%id%" }
       let raw_url = if item.keys().contains("url") { item.at("url") } else { base_template }
       let qr_url = expand-url(raw_url, item.id, item.locator, item.name, item.zone)
-      [#label(item.id, item.name, item.zone, item.locator, qr_url)]
+      let show_qr = qr-enabled(item)
+      [#label(item.id, item.name, item.zone, item.locator, qr_url, show_qr)]
     })
   )
 ]

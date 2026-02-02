@@ -16,7 +16,7 @@ Coded in:
 - Give each item with a label an individual identifier
 
 ## How does it work?
-Each label is rendered with 4 fields and a QR-Code. QR codes could lead to:
+Each label is rendered with 4 fields and a QR-Code (optionally disabled per label). QR codes could lead to:
 - Repairs & Replacement Logs
 - Internal Documentation
 - Dashboards
@@ -40,8 +40,9 @@ Create and edit a `labels.json` file to include a list containing a `"base-url`"
 | `zone` | Zone | `DATACENTER-A` | `%zone%` | Yes |
 | `locator` | Locator | `RACK-01-U3` | `%locator%` | Yes |
 | `url` | Override URL | `http://10.0.20.134:8005` |  | No |
+| `qr` | Show QR code | `false` |  | No |
 
-The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or `%zone%` placeholders which will be substituted in the QR code URL. If the `base-url` contains no placeholders, `%id%` will be appended automatically for backward compatibility. Both `base-url` and item-level `url` support URL placeholders. Item-level `url` takes precedence over `base-url` for that specific label.
+The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or `%zone%` placeholders which will be substituted in the QR code URL. If the `base-url` contains no placeholders, `%id%` will be appended automatically for backward compatibility. Both `base-url` and item-level `url` support URL placeholders. Item-level `url` takes precedence over `base-url` for that specific label. You can also manually disable the QR code per individual label using the `qr` boolean field.
 
 
 ## Example JSON Configuration
@@ -57,9 +58,10 @@ The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or 
     },
     {
       "id": "AMS_switch_core_01",
-      "name": "Core Network Switch",
+      "name": "Core Control Network Switch",
       "zone": "NETWORK",
-      "locator": "RACK-02-U1"
+      "locator": "RACK-02-U1",
+      "qr": false
     },
     {
       "id": "BER_ap_02",
@@ -73,7 +75,8 @@ The `base-url` and per-item `url` can include `%id%`, `%locator%`, `%name%`, or 
       "name": "Document Printer",
       "zone": "ADMIN",
       "locator": "ROOM-204",
-      "url": "https://docs.example.com/printers/%locator%/%name%"
+      "url": "https://docs.example.com/printers/%locator%/%id%",
+      "qr": false
     }
   ]
 }
